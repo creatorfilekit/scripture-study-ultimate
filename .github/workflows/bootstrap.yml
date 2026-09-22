@@ -25,7 +25,7 @@ jobs:
             .bundle/part-002 \
             .bundle/part-003 \
             .bundle/fix4-0 .bundle/fix4-1 .bundle/fix4-2 \
-            .bundle/fix5-0 .bundle/fix5-1 .bundle/fix5-2 \
+            .bundle/fix5-0 .bundle/fix5-1a .bundle/fix5-1b .bundle/fix5-1c .bundle/fix5-2 \
             .bundle/part-006 \
             .bundle/part-007 \
             .bundle/part-008 \
