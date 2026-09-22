@@ -25,4 +25,6 @@ The app does not redistribute the complete New Living Translation, English Stand
 
 ## Hosting
 
-This is a static app. Upload the ZIP to Vercel, Netlify, GitHub Pages, or another HTTPS static host. PWA installation requires HTTPS, except on localhost during development.
+This repository is connected to the Vercel project `scripture-study-ultimate`. Commits pushed to `main` can trigger production deployments through Vercel Git integration.
+
+This is a static app and can also be hosted on another HTTPS static host. PWA installation requires HTTPS, except on localhost during development.
