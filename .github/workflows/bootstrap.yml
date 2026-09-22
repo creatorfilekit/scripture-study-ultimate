@@ -16,21 +16,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Check bundle readiness
-        id: ready
+      - name: Rebuild V3.2 bundle
         shell: bash
         run: |
-          if [ -f .bundle/archive.zip ]; then
-            echo "ready=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "ready=false" >> "$GITHUB_OUTPUT"
-          fi
+          test -f .bundle/READY
+          cat .bundle/part-* | base64 --decode > .bundle/archive.zip
+          unzip -t .bundle/archive.zip
 
       - name: Unpack V3.2
-        if: steps.ready.outputs.ready == 'true'
         shell: bash
         run: |
-          unzip -t .bundle/archive.zip
           unzip -o .bundle/archive.zip -d .
           rm -rf .bundle
           git config user.name "github-actions[bot]"
