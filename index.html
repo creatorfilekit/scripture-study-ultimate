@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#6f5430" />
+  <meta name="description" content="Offline-first Bible study app with parallel translations, Strong's, Hebrew and Greek, morphology, cross references, maps, backgrounds, notes and study packs." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Scripture Study" />
+  <title>Scripture Study Ultimate</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div><strong>Scripture Study</strong><span>Ultimate Biblical Studies</span></div>
+      </div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-view="home">⌂ <span>Home</span></button>
+        <button class="nav-item" data-view="bible">📖 <span>Bible</span></button>
+        <button class="nav-item" data-view="study">אα <span>Study</span></button>
+        <button class="nav-item" data-view="strongs">S <span>Strong's</span></button>
+        <button class="nav-item" data-view="maps">⌖ <span>Maps</span></button>
+        <button class="nav-item" data-view="background">▤ <span>Background</span></button>
+        <button class="nav-item" data-view="library">☷ <span>Library</span></button>
+        <button class="nav-item" data-view="packs">↓ <span>Data Packs</span></button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="offline-card">
+          <span class="status-dot"></span>
+          <div><b id="connectionLabel">Checking…</b><small id="offlineDetail">Core app is cached on this device.</small></div>
+        </div>
+        <button class="sidebar-link" id="aboutBtn">Sources & licenses</button>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="menuBtn" aria-label="Menu">☰</button>
+        <div class="passage-controls">
+          <select id="bookSelect" aria-label="Book"></select>
+          <select id="chapterSelect" aria-label="Chapter"></select>
+          <select id="translationSelect" aria-label="Translation"></select>
+        </div>
+        <div class="search-wrap">
+          <input id="searchInput" placeholder="John 3:16, love, H7225, G3056…" autocomplete="off" />
+          <button id="searchBtn">Search</button>
+        </div>
+        <button class="install-btn" id="installBtn" hidden>Install</button>
+        <button class="icon-btn" id="fontBtn" title="Reading size" aria-label="Reading size">Aa</button>
+        <button class="icon-btn" id="themeBtn" title="Theme" aria-label="Change theme">◐</button>
+      </header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+
+  <div class="install-toast" id="installToast" hidden>
+    <div><b>Install Scripture Study</b><small id="installHint">Keep the app on your Home Screen and use downloaded study data offline.</small></div>
+    <button id="installToastBtn">Install</button>
+    <button class="toast-close" id="installToastClose" aria-label="Close">×</button>
+  </div>
+
+  <dialog id="verseDialog" class="modal modal-wide">
+    <div class="dialog-head"><strong id="dialogRef"></strong><button data-close="verseDialog">×</button></div>
+    <div id="dialogText" class="dialog-text"></div>
+    <div class="verse-actions">
+      <button id="copyVerseBtn">Copy</button><button id="shareVerseBtn">Share</button><button id="speakVerseBtn">Listen</button>
+    </div>
+    <div class="highlight-row"><span>Highlight</span><button data-highlight="yellow">●</button><button data-highlight="green">●</button><button data-highlight="blue">●</button><button data-highlight="pink">●</button><button data-highlight="">Clear</button></div>
+    <textarea id="noteInput" placeholder="Personal study note"></textarea>
+    <div class="dialog-actions"><button id="bookmarkBtn">☆ Bookmark</button><button id="openStudyBtn">Open Study</button><button id="saveNoteBtn" class="primary">Save note</button></div>
+  </dialog>
+
+  <dialog id="strongDialog" class="modal modal-wide">
+    <div class="dialog-head"><strong id="strongTitle">Strong's</strong><button data-close="strongDialog">×</button></div>
+    <div id="strongContent" class="modal-scroll"></div>
+  </dialog>
+
+  <dialog id="installHelpDialog" class="modal">
+    <div class="dialog-head"><strong>Install Scripture Study</strong><button data-close="installHelpDialog">×</button></div>
+    <div class="install-help" id="installHelpContent"></div>
+  </dialog>
+
+  <dialog id="importDialog" class="modal modal-wide">
+    <div class="dialog-head"><strong>Import a private Bible pack</strong><button data-close="importDialog">×</button></div>
+    <div class="modal-scroll">
+      <p class="muted">Use this for a translation you are legally allowed to use, including a publisher-licensed NLT, ESV, or Pinoy Version file. The file stays in your browser storage and is not uploaded by this app.</p>
+      <div class="import-schema"><b>Accepted JSON format</b><code>{"code":"MYBIBLE","name":"My Bible","lang":"English","books":{"John":{"3":["verse 1","verse 2"]}}}</code></div>
+      <input type="file" id="translationFile" accept="application/json,.json" />
+      <button id="importTranslationBtn" class="primary block-btn">Import pack</button>
+      <div id="importResult" class="small-note"></div>
+    </div>
+  </dialog>
+
+  <dialog id="aboutDialog" class="modal modal-wide">
+    <div class="dialog-head"><strong>Sources, licenses, and study method</strong><button data-close="aboutDialog">×</button></div>
+    <div class="modal-scroll" id="aboutContent"></div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

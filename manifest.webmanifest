@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Scripture Study Ultimate",
+  "short_name": "Scripture Study",
+  "description": "Offline first Bible study with parallel translations, Strong's, Hebrew and Greek, morphology, cross references, maps, backgrounds, notes and study packs.",
+  "lang": "en",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#f2efe7",
+  "theme_color": "#6f5430",
+  "categories": ["education", "books", "reference"],
+  "icons": [
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ],
+  "shortcuts": [
+    {"name":"Bible Reader","short_name":"Bible","url":"./?view=bible","icons":[{"src":"assets/icon-192.png","sizes":"192x192"}]},
+    {"name":"Hebrew and Greek Study","short_name":"Study","url":"./?view=study","icons":[{"src":"assets/icon-192.png","sizes":"192x192"}]},
+    {"name":"Strong's Concordance","short_name":"Strong's","url":"./?view=strongs","icons":[{"src":"assets/icon-192.png","sizes":"192x192"}]},
+    {"name":"Bible Atlas","short_name":"Maps","url":"./?view=maps","icons":[{"src":"assets/icon-192.png","sizes":"192x192"}]}
+  ]
+}
