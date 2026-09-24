@@ -58,3 +58,19 @@ body[data-font="large"] .verse-row{font-size:22px}body[data-font="large"] .study
 @media(max-width:1100px){.study-layout,.atlas-layout{grid-template-columns:1fr}.map-info .place-list{max-height:330px}.hero-card{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:900px){.hero-copy h1{font-size:37px}.dashboard-grid,.strong-grid{grid-template-columns:1fr}.library-stats{grid-template-columns:repeat(2,1fr)}.profile-facts{grid-template-columns:1fr}.pack-card.featured{grid-column:span 1}.download-progress{top:128px;grid-template-columns:1fr}.backup-card{align-items:flex-start;flex-direction:column}.parallel-grid.three{min-width:860px}.morph-row{grid-template-columns:1fr 65px 80px}.morph-row code{grid-column:1/-1}.principles-card{align-items:flex-start;flex-direction:column}}
 @media(max-width:560px){.hero-card{padding:22px}.hero-copy h1{font-size:32px}.hero-stats{grid-template-columns:1fr 1fr}.reader-card{padding:17px 14px}.verse-row{grid-template-columns:29px 1fr}.parallel-selectors{display:grid}.parallel-selectors label{display:grid}.parallel-selectors select{width:100%}.study-english{font-size:19px}.original-study{font-size:25px}.strong-hero{flex-direction:column}.detail-line{grid-template-columns:1fr}.map-search{display:grid;grid-template-columns:1fr 1fr}.map-search input{grid-column:1/-1}.library-stats{grid-template-columns:1fr 1fr}.verse-actions,.highlight-row{flex-wrap:wrap}}
+
+
+/* CreatorFileKit cloud sync */
+.account-btn{white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
+.account-btn span{font-size:11px;font-weight:650}
+.account-panel{padding:18px;display:grid;gap:14px;min-width:min(440px,80vw)}
+.account-field{display:grid;gap:6px;font-size:11px;color:var(--muted);margin:10px 0}
+.account-field input{width:100%;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:8px;padding:10px}
+.account-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.account-actions button{border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:8px;padding:9px 12px}
+.account-actions .primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cloud-user{display:grid;gap:4px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.cloud-user span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.cloud-message{min-height:18px;padding-top:4px}
+.error-text{color:var(--danger)!important}
+@media(max-width:560px){.account-btn span{display:none}.account-btn{padding-inline:10px}.account-panel{min-width:0}}
