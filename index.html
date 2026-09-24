@@ -53,6 +53,7 @@
           <input id="searchInput" placeholder="John 3:16, love, H7225, G3056…" autocomplete="off" />
           <button id="searchBtn">Search</button>
         </div>
+        <button class="icon-btn account-btn" id="accountBtn" title="Sign in for optional cloud sync" aria-label="Cloud sync">☁ <span id="accountLabel">Sign in</span></button>
         <button class="install-btn" id="installBtn" hidden>Install</button>
         <button class="icon-btn" id="fontBtn" title="Reading size" aria-label="Reading size">Aa</button>
         <button class="icon-btn" id="themeBtn" title="Theme" aria-label="Change theme">◐</button>
@@ -104,7 +105,28 @@
     <div class="modal-scroll" id="aboutContent"></div>
   </dialog>
 
+  <dialog id="accountDialog" class="modal">
+    <div class="dialog-head"><strong>CreatorFileKit Cloud Sync</strong><button data-close="accountDialog">×</button></div>
+    <div class="account-panel">
+      <div id="cloudSignedOut">
+        <p class="muted">An account is optional. Scripture Study still works offline without signing in. Sign in only if you want your notes, bookmarks, highlights, and reading history available across devices.</p>
+        <label class="account-field">Email<input id="cloudEmail" type="email" autocomplete="email" placeholder="you@example.com"></label>
+        <label class="account-field">Password<input id="cloudPassword" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters"></label>
+        <div class="account-actions"><button class="primary" id="cloudSignInBtn">Sign in</button><button id="cloudSignUpBtn">Create account</button></div>
+      </div>
+      <div id="cloudSignedIn" hidden>
+        <div class="cloud-user"><span>Signed in as</span><b id="cloudUserEmail"></b></div>
+        <p class="muted" id="cloudSyncStatus">Not synced yet</p>
+        <div class="account-actions"><button class="primary" id="cloudSyncBtn">Sync now</button><button id="cloudSignOutBtn">Sign out</button></div>
+      </div>
+      <div id="cloudMessage" class="small-note cloud-message"></div>
+      <p class="tiny muted">Private imported Bible translation files and downloaded Bible packs stay on this device and are not uploaded by cloud sync.</p>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
   <script src="data.js"></script>
+  <script src="cloud-sync.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
