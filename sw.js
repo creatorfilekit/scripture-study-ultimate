@@ -1,7 +1,7 @@
-const CACHE = 'scripture-study-v3.2.0';
+const CACHE = 'scripture-study-v3.2.1-cloud';
 const CORE = [
   './', './index.html', './styles.css', './data.js', './app.js',
-  './manifest.webmanifest', './assets/icon.svg', './assets/icon-192.png',
+  './manifest.webmanifest', './cloud-sync.js', './assets/icon.svg', './assets/icon-192.png',
   './assets/icon-512.png', './assets/apple-touch-icon.png', './assets/favicon-48.png'
 ];
 
